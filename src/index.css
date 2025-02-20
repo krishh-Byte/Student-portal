@@ -1,0 +1,516 @@
+/* General Styles */
+body {
+  background-color: #e3f2fd; /* Light blue background */
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  
+}
+
+/* Navbar Container */
+.navbar {
+  /* background: linear-gradient(90deg, #ff7e5f, #feb47b); */
+  background: linear-gradient(90deg, #ff7e5f, #feb47b, #86a8e7);
+  color: white;
+  padding: 10px 20px;
+  font-size: 20px;
+  font-weight: bold;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 60px; /* Adjusted height */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Align logo on left & user icon on right */
+  z-index: 1000;
+}
+
+/* Left Section (Logo & Title) */
+.navbar-left {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo {
+  height: 40px; /* Ensures logo fits within navbar */
+  width: auto; /* Keeps aspect ratio */
+  margin-right: 10px;
+}
+
+/* User Menu (Right Section) */
+.user-menu {
+  display: flex;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+/* User Icon */
+.user-icon {
+  height: 35px; /* Adjust size to fit navbar */
+  width: auto;
+  margin-right: 25px; /* Add spacing from right edge */
+}
+
+/* Dropdown Menu */
+.dropdown-menu {
+  position: absolute;
+  right: 0;
+  top: 50px;
+  background: white;
+  color: #333;
+  width: 180px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  font-family: "Poppins", sans-serif; /* Clean font */
+}
+
+/* Dropdown List */
+.dropdown-menu ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* Dropdown List Items */
+.dropdown-menu ul li {
+  padding: 12px 15px;
+  font-size: 16px;
+  font-weight: normal; /* Remove bold effect */
+  color: #444;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+/* Hover Effect */
+.dropdown-menu ul li:hover {
+  background-color: #f0f0f0;
+}
+
+/* Add a separator between items */
+.dropdown-menu ul li:not(:last-child) {
+  border-bottom: 1px solid #ddd;
+}
+
+
+
+
+/* Main Container - Holds Sidebar + Content */
+.main-container {
+  display: flex;
+  margin-top: 50px; /* Prevent content from being hidden under navbar */
+}
+
+
+/* Sidebar Styles */
+.sidebar {
+  width: 200px;
+  height: calc(100vh - 50px); /* Full height minus navbar */
+  background-color: #102b6bd4; 
+  color: white;
+  padding-top: 30px;
+  position: fixed;
+  left: 0;
+  top: 50px; /* Push down below navbar */
+  display: flex;
+  flex-direction: column;
+  z-index: 999; /* Keep sidebar above content */
+}
+
+/* Sidebar List */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  padding: 15px;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: left;
+  transition: background 0.3s ease;
+  border-bottom: 1px solid #ffffff40; /* White border with transparency */
+}
+
+.sidebar ul li:hover {
+  background-color: #142850; /* Slightly lighter dark blue on hover */
+}
+
+
+/* Content Area (Only This Part Updates) */
+.content {
+  margin-left: 200px; /* Same as sidebar width */
+  padding: 20px;
+  width: calc(100% - 200px); /* Prevent overlap with sidebar */
+  min-height: calc(100vh - 50px); /* Prevent content from going under navbar */
+  background-color: #f4f4f4;
+  overflow-y: auto; /* Enables scrolling for long content */
+}
+
+.courses-container {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.add-course {
+  background: white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.input-field {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.add-btn {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.add-btn:hover {
+  background-color: #0056b3;
+}
+
+.courses-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.courses-table th, .courses-table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.delete-btn {
+  background-color: #e74c3c;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn:hover {
+  background-color: #c0392b;
+}
+
+
+.assignments-container {
+  width: 90%;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+/* Filter Section */
+.filter-section {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.filter-section input {
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  outline: none;
+}
+
+/* Assignments Table */
+.assignments-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.assignments-table th,
+.assignments-table td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+.assignments-table th {
+  background: #f4f4f4;
+}
+
+.assignments-table tr:nth-child(even) {
+  background: #f9f9f9;
+}
+
+.assignments-table tr:hover {
+  background: #e6f7ff;
+}
+
+/* Status Styling */
+.status {
+  font-weight: bold;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.ongoing {
+  color: #d97706;
+  /* background-color: #fff4e5; */
+}
+
+.completed {
+  color: #047857;
+  /* background-color: #e6fffa; */
+}
+
+
+
+/* CGPA Container */
+.cgpa-container {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+h2 {
+  margin-bottom: 15px;
+}
+
+/* CGPA Box */
+.cgpa-box {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #e0f7fa;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.cgpa-box h4 {
+  font-size: 1.2rem;
+  color: #00796b;
+}
+
+.cgpa-box span {
+  font-weight: bold;
+}
+
+/* CGPA Table */
+.cgpa-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.cgpa-table th, .cgpa-table td {
+  padding: 10px;
+  border: 1px solid #ddd;
+  text-align: center;
+}
+
+.cgpa-table th {
+  background-color: #f0f0f0;
+}
+
+.even-row {
+  background-color: #f9f9f9;
+}
+
+.odd-row {
+  background-color: #ffffff;
+}
+
+
+
+/* Courses Component Styling */
+
+/* Container */
+.courses-container {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h2, h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+/* Form */
+.enroll-form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.input-field {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 14px;
+  background-color: white;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-field:focus {
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.2);
+}
+
+/* Buttons */
+.enroll-btn,
+.delete-btn {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.1s;
+}
+
+.enroll-btn {
+  background-color: #007bff;
+  color: white;
+}
+
+.enroll-btn:hover {
+  background-color: #0056b3;
+}
+
+.delete-btn {
+  background-color: #dc3545;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #b02a37;
+}
+
+.delete-btn:active,
+.enroll-btn:active {
+  transform: scale(0.95);
+}
+
+/* Table */
+.courses-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.courses-table th,
+.courses-table td {
+  padding: 10px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.courses-table th {
+  background-color: #007bff;
+  color: white;
+  font-weight: 600;
+}
+
+.course-row:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.course-row:hover {
+  background-color: #e9ecef;
+}
+
+
+
+
+/* home container */
+.home-container {
+  padding: 20px;
+  color: #333;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.2rem;
+  color: #666;
+}
+
+/* Overview Cards */
+.overview-cards {
+  display: flex;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.card {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  flex: 1;
+  text-align: center;
+}
+
+.card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 5px;
+}
+
+.card p {
+  color: #666;
+}
+
+/* Recent Activity */
+.recent-activity {
+  margin-top: 20px;
+}
+
+.recent-activity ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.recent-activity li {
+  background: #e3f2fd;
+  padding: 10px;
+  margin: 5px 0;
+  border-radius: 5px;
+}
